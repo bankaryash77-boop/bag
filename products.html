@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - The Hemraj Enterprises</title>
+    <link rel="stylesheet" href="product.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- Sticky Header -->
+    <header class="header" data-testid="main-header">
+        <div class="header-container">
+            <a href="index.html" class="logo" data-testid="logo-link">
+                <img src="https://customer-assets.emergentagent.com/job_bag-shop-redesign/artifacts/8osdwagg_hemraj.jpeg" alt="The Hemraj Enterprises" class="logo-img">
+                <span class="logo-text">Hemraj</span>
+            </a>
+            
+            <nav class="nav-desktop" data-testid="desktop-nav">
+                <a href="index.html" class="nav-link" data-testid="nav-home">Home</a>
+                <a href="products.html" class="nav-link active" data-testid="nav-products">Products</a>
+                <a href="about us.html" class="nav-link" data-testid="nav-about">About</a>
+                <a href="contact.html" class="nav-link" data-testid="nav-contact">Contact</a>
+                <button type="button" class="owner-entry-btn" id="owner-entry-btn" aria-label="Owner login" title="Owner" data-testid="owner-entry-btn">Owner</button>
+            </nav>
+
+            <button class="menu-toggle" type="button" aria-label="Open menu" aria-controls="mobileDrawer" aria-expanded="false" data-testid="menu-toggle">
+                <span class="menu-icon" aria-hidden="true"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Drawer -->
+    <div class="drawer-overlay" data-drawer-close></div>
+    <aside class="mobile-drawer" id="mobileDrawer" aria-hidden="true" data-testid="mobile-drawer">
+        <div class="drawer-header">
+            <span class="drawer-title">Menu</span>
+            <button class="drawer-close" type="button" aria-label="Close menu" data-drawer-close data-testid="drawer-close">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <nav class="drawer-nav">
+            <a href="index.html" data-drawer-link data-testid="drawer-home">Home</a>
+            <a href="products.html" class="active" data-drawer-link data-testid="drawer-products">Products</a>
+            <a href="about us.html" data-drawer-link data-testid="drawer-about">About</a>
+            <a href="contact.html" data-drawer-link data-testid="drawer-contact">Contact</a>
+            <button type="button" class="drawer-owner-btn" id="drawer-owner-btn" data-drawer-link data-testid="drawer-owner-btn">Owner</button>
+        </nav>
+    </aside>
+
+    <!-- Page Header -->
+    <section class="page-header" data-testid="page-header">
+        <div class="page-header-content">
+            <h1>Our Products</h1>
+            <p>Discover our amazing collection of premium eco-friendly bags</p>
+        </div>
+    </section>
+
+    <!-- Hero Section -->
+    <section class="product-hero" data-testid="product-hero">
+        <div class="hero-inner">
+            <div class="hero-left">
+                <span class="hero-eyebrow">Premium Non-Woven Bags</span>
+                <h2 class="hero-title">Sustainable bags for every business need.</h2>
+                <p class="hero-subtitle">
+                    Eco-friendly, durable and fully customizable bags for retail stores, events and brand promotion.
+                    Choose the type that fits your use case and quantity.
+                </p>
+
+                <div class="hero-features-grid">
+                    <div class="hero-feature-card" data-testid="hero-feature-eco">
+                        <span class="hero-feature-icon"><i class="fas fa-leaf"></i></span>
+                        <span class="hero-feature-text">100% Eco-Friendly</span>
+                    </div>
+                    <div class="hero-feature-card" data-testid="hero-feature-durable">
+                        <span class="hero-feature-icon"><i class="fas fa-sync-alt"></i></span>
+                        <span class="hero-feature-text">Durable & Reusable</span>
+                    </div>
+                    <div class="hero-feature-card" data-testid="hero-feature-custom">
+                        <span class="hero-feature-icon"><i class="fas fa-palette"></i></span>
+                        <span class="hero-feature-text">Customizable Design</span>
+                    </div>
+                    <div class="hero-feature-card" data-testid="hero-feature-delivery">
+                        <span class="hero-feature-icon"><i class="fas fa-shipping-fast"></i></span>
+                        <span class="hero-feature-text">Fast Delivery</span>
+                    </div>
+                </div>
+
+                <div class="hero-cta-row">
+                    <a href="#wholesale-products" class="hero-btn primary" data-testid="hero-btn-wholesale">Shop Wholesale</a>
+                    <a href="#retail-products" class="hero-btn outlined" data-testid="hero-btn-retail">Shop Retail</a>
+                </div>
+            </div>
+
+            <div class="hero-right">
+                <div class="hero-illustration">
+                    <img src="https://images.unsplash.com/photo-1760565030346-4b947220fe3a?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85&w=500" alt="Colorful shopping bags">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Search -->
+    <section class="product-search-section" data-testid="product-search-section">
+        <div class="product-search-inner">
+            <label for="product-search-input" class="visually-hidden">Search products in wholesale and retail</label>
+            <i class="fas fa-search product-search-icon" aria-hidden="true"></i>
+            <input type="search" id="product-search-input" class="product-search-input" placeholder="Search products (wholesale & retail)..." autocomplete="off" data-testid="product-search-input">
+            <span class="product-search-clear" id="product-search-clear" aria-label="Clear search" title="Clear" data-testid="product-search-clear">&times;</span>
+        </div>
+        <p class="product-search-hint">Search by product name, type (e.g. D-cut, Box, Non Woven) or category (PP, Paper, Jute).</p>
+    </section>
+
+    <main>
+        <div class="product-search-no-results" id="product-search-no-results" aria-live="polite" data-testid="no-results">
+            <i class="fas fa-search"></i>
+            <p>No products match "<strong id="product-search-query"></strong>". Try another term or clear the search.</p>
+        </div>
+
+        <section class="products-wrapper">
+            <!-- Wholesale Section -->
+            <h2 id="wholesale-products" class="products-section-title" data-testid="wholesale-title">
+                <i class="fas fa-boxes"></i> Wholesale
+            </h2>
+
+            <section class="products-section" data-section="wholesale">
+                <div class="products-container">
+                    <!-- Product 1 -->
+                    <div class="product-card" data-product="1" data-section="wholesale" data-search="d-cut printed bags wholesale" data-testid="product-card-1">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1644015040594-8924d3ecc0dd?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85&w=400" alt="D-cut Bags">
+                        </div>
+                        <div class="product-info">
+                            <h3>D-cut Bags</h3>
+                            <p class="product-price">Printed Bags</p>
+                            <button class="view-details-btn" data-testid="view-details-1">View Details</button>
+                        </div>
+                    </div>
+
+                    <!-- Product 2 -->
+                    <div class="product-card" data-product="2" data-section="wholesale" data-search="box bags printed wholesale" data-testid="product-card-2">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1633414654227-2b5ea828b3ef?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85&w=400" alt="Box Bags">
+                        </div>
+                        <div class="product-info">
+                            <h3>Box Bags</h3>
+                            <p class="product-price">Printed Bags</p>
+                            <button class="view-details-btn" data-testid="view-details-2">View Details</button>
+                        </div>
+                    </div>
+
+                    <!-- Product 3 -->
+                    <div class="product-card" data-product="3" data-section="wholesale" data-search="loop handle bags printed wholesale" data-testid="product-card-3">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1616429368325-d5d7542b0ec3?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85&w=400" alt="Loop Handle Bags">
+                        </div>
+                        <div class="product-info">
+                            <h3>Loop Handle Bags</h3>
+                            <p class="product-price">Printed Bags</p>
+                            <button class="view-details-btn" data-testid="view-details-3">View Details</button>
+                        </div>
+                    </div>
+
+                    <!-- Product 4 -->
+                    <div class="product-card" data-product="4" data-section="wholesale" data-search="w-cut printed bags wholesale" data-testid="product-card-4">
+                        <div class="product-image">
+                           <img src="https://images.unsplash.com/photo-1652605942711-2b6f3d836b00?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85&w=400" alt="W-cut Bags">
+                        </div>
+                        <div class="product-info">
+                            <h3>W-cut Bags</h3>
+                            <p class="product-price">Printed Bags</p>
+                            <button class="view-details-btn" data-testid="view-details-4">View Details</button>
+                        </div>
+                    </div>
+
+                    <!-- Product 5 -->
+                    <div class="product-card" data-product="5" data-section="wholesale" data-search="non woven bags printed wholesale" data-testid="product-card-5">
+                        <div class="product-image">
+                            <img src="https://images.pexels.com/photos/7987865/pexels-photo-7987865.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Non Woven Bags">
+                        </div>
+                        <div class="product-info">
+                            <h3>Non Woven Bags</h3>
+                            <p class="product-price">$899.99</p>
+                            <button class="view-details-btn" data-testid="view-details-5">View Details</button>
+                        </div>
+                    </div>
+
+                    <!-- Product 6 -->
+                    <div class="product-card" data-product="6" data-section="wholesale" data-search="wedding bags wholesale" data-testid="product-card-6">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1760565031198-00e39da3d9cb?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85&w=400" alt="Wedding Bags">
+                        </div>
+                        <div class="product-info">
+                            <h3>Wedding Bags</h3>
+                            <p class="product-price">$599.99</p>
+                            <button class="view-details-btn" data-testid="view-details-6">View Details</button>
+                        </div>
+                    </div>
+
+                    <!-- Product 7 -->
+                    <div class="product-card" data-product="7" data-section="wholesale" data-search="non woven grocery bags wholesale" data-testid="product-card-7">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1758708536099-9f46dc81fffc?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85&w=400" alt="Grocery Bags">
+                        </div>
+                        <div class="product-info">
+                            <h3>Jute Grocery Bags</h3>
+                            <p class="product-price">$499.99</p>
+                            <button class="view-details-btn" data-testid="view-details-7">View Details</button>
+                        </div>
+                    </div>
+
+                    <!-- Product 8 -->
+                    <div class="product-card" data-product="8" data-section="wholesale" data-search="non woven gift bags wholesale" data-testid="product-card-8">
+                        <div class="product-image">
+                            <img src="https://images.pexels.com/photos/5926245/pexels-photo-5926245.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Gift Bags">
+                        </div>
+                        <div class="product-info">
+                            <h3>Gift Bags</h3>
+                            <p class="product-price">$399.99</p>
+                            <button class="view-details-btn" data-testid="view-details-8">View Details</button>
+                        </div>
+                    </div>
+
+                    <!-- Product 9 -->
+                    <div class="product-card" data-product="9" data-section="wholesale" data-search="non woven bottle bags wholesale" data-testid="product-card-9">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1760564877737-3686929411cb?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85&w=400" alt="Bottle Bags">
+                        </div>
+                        <div class="product-info">
+                            <h3>Bottle Bags</h3>
+                            <p class="product-price">$129.99</p>
+                            <button class="view-details-btn" data-testid="view-details-9">View Details</button>
+                        </div>
+                    </div>
+
+                    <!-- Product 10 -->
+                    <div class="product-card" data-product="10" data-section="wholesale" data-search="non woven boutique bags wholesale" data-testid="product-card-10">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1760564877791-50863c5773da?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85&w=400" alt="Boutique Bags">
+                        </div>
+                        <div class="product-info">
+                            <h3>Boutique Bags</h3>
+                            <p class="product-price">$89.99</p>
+                            <button class="view-details-btn" data-testid="view-details-10">View Details</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Retail Section -->
+            <h2 id="retail-products" class="products-section-title" data-testid="retail-title">
+                <i class="fas fa-shopping-bag"></i> Retail
+            </h2>
+
+            <!-- PP Bags -->
+            <h3 id="retail-pp-bags" class="products-subsection-title" data-testid="pp-bags-title">PP Bags</h3>
+            <section class="products-section" data-section="retail" data-category="pp-bags">
+                <div class="products-container">
+                    <div class="product-card" data-product="11" data-section="retail" data-category="pp-bags" data-search="retail d-cut pp bags">
+                        <div class="product-image"><img src="https://images.unsplash.com/photo-1644015040594-8924d3ecc0dd?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85&w=400" alt="D-cut PP Bag"></div>
+                        <div class="product-info"><h3>D-cut PP Bag</h3><p class="product-price">$4.49</p><button class="view-details-btn">View Details</button></div>
+                    </div>
+                    <div class="product-card" data-product="12" data-section="retail" data-category="pp-bags" data-search="retail box pp bags">
+                        <div class="product-image"><img src="https://images.unsplash.com/photo-1633414654227-2b5ea828b3ef?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85&w=400" alt="Box PP Bag"></div>
+                        <div class="product-info"><h3>Box PP Bag</h3><p class="product-price">$4.49</p><button class="view-details-btn">View Details</button></div>
+                    </div>
+                    <div class="product-card" data-product="13" data-section="retail" data-category="pp-bags" data-search="retail loop handle pp bags">
+                        <div class="product-image"><img src="https://images.unsplash.com/photo-1616429368325-d5d7542b0ec3?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85&w=400" alt="Loop Handle PP Bag"></div>
+                        <div class="product-info"><h3>Loop Handle PP Bag</h3><p class="product-price">$4.99</p><button class="view-details-btn">View Details</button></div>
+                    </div>
+                    <div class="product-card" data-product="14" data-section="retail" data-category="pp-bags" data-search="retail w-cut pp bags">
+                        <div class="product-image"><img src="https://images.unsplash.com/photo-1652605942711-2b6f3d836b00?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85&w=400" alt="W-cut PP Bag"></div>
+                        <div class="product-info"><h3>W-cut PP Bag</h3><p class="product-price">$3.49</p><button class="view-details-btn">View Details</button></div>
+                    </div>
+                    <div class="product-card" data-product="15" data-section="retail" data-category="pp-bags" data-search="retail printed pp bags">
+                        <div class="product-image"><img src="https://images.pexels.com/photos/5650016/pexels-photo-5650016.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Printed PP Bag"></div>
+                        <div class="product-info"><h3>Printed PP Bag</h3><p class="product-price">$5.49</p><button class="view-details-btn">View Details</button></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Non Woven Bags -->
+            <h3 id="retail-nonwoven-bags" class="products-subsection-title" data-testid="nonwoven-bags-title">Non Woven Bags</h3>
+            <section class="products-section" data-section="retail" data-category="nonwoven-bags">
+                <div class="products-container">
+                    <div class="product-card" data-product="16" data-section="retail" data-category="nonwoven-bags" data-search="retail d-cut non woven bags">
+                        <div class="product-image"><img src="https://images.pexels.com/photos/7987865/pexels-photo-7987865.jpeg?auto=compress&cs=tinysrgb&w=400" alt="D-cut Non Woven Bag"></div>
+                        <div class="product-info"><h3>D-cut Non Woven Bag</h3><p class="product-price">$4.49</p><button class="view-details-btn">View Details</button></div>
+                    </div>
+                    <div class="product-card" data-product="17" data-section="retail" data-category="nonwoven-bags" data-search="retail box non woven bags">
+                        <div class="product-image"><img src="https://images.unsplash.com/photo-1760565030346-4b947220fe3a?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85&w=400" alt="Box Non Woven Bag"></div>
+                        <div class="product-info"><h3>Box Non Woven Bag</h3><p class="product-price">$4.49</p><button class="view-details-btn">View Details</button></div>
+                    </div>
+                    <div class="product-card" data-product="18" data-section="retail" data-category="nonwoven-bags" data-search="retail loop handle non woven bags">
+                        <div class="product-image"><img src="https://images.pexels.com/photos/5926245/pexels-photo-5926245.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Loop Handle Non Woven Bag"></div>
+                        <div class="product-info"><h3>Loop Handle Non Woven</h3><p class="product-price">$4.99</p><button class="view-details-btn">View Details</button></div>
+                    </div>
+                    <div class="product-card" data-product="19" data-section="retail" data-category="nonwoven-bags" data-search="retail w-cut non woven bags">
+                        <div class="product-image"><img src="https://images.unsplash.com/photo-1760564877791-50863c5773da?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85&w=400" alt="W-cut Non Woven Bag"></div>
+                        <div class="product-info"><h3>W-cut Non Woven Bag</h3><p class="product-price">$3.49</p><button class="view-details-btn">View Details</button></div>
+                    </div>
+                    <div class="product-card" data-product="20" data-section="retail" data-category="nonwoven-bags" data-search="retail printed non woven bags">
+                        <div class="product-image"><img src="https://images.unsplash.com/photo-1760564877737-3686929411cb?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85&w=400" alt="Printed Non Woven Bag"></div>
+                        <div class="product-info"><h3>Printed Non Woven Bag</h3><p class="product-price">$5.49</p><button class="view-details-btn">View Details</button></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Paper Bags -->
+            <h3 id="retail-paper-bags" class="products-subsection-title" data-testid="paper-bags-title">Paper Bags</h3>
+            <section class="products-section" data-section="retail" data-category="paper-bags">
+                <div class="products-container">
+                    <div class="product-card" data-product="26" data-section="retail" data-category="paper-bags" data-search="retail d-cut paper bags">
+                        <div class="product-image"><img src="https://images.unsplash.com/photo-1644015040594-8924d3ecc0dd?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85&w=400" alt="D-cut Paper Bag"></div>
+                        <div class="product-info"><h3>D-cut Paper Bag</h3><p class="product-price">$4.49</p><button class="view-details-btn">View Details</button></div>
+                    </div>
+                    <div class="product-card" data-product="27" data-section="retail" data-category="paper-bags" data-search="retail box paper bags">
+                        <div class="product-image"><img src="https://images.unsplash.com/photo-1633414654227-2b5ea828b3ef?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85&w=400" alt="Box Paper Bag"></div>
+                        <div class="product-info"><h3>Box Paper Bag</h3><p class="product-price">$4.49</p><button class="view-details-btn">View Details</button></div>
+                    </div>
+                    <div class="product-card" data-product="28" data-section="retail" data-category="paper-bags" data-search="retail loop handle paper bags">
+                        <div class="product-image"><img src="https://images.unsplash.com/photo-1616429368325-d5d7542b0ec3?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85&w=400" alt="Loop Handle Paper Bag"></div>
+                        <div class="product-info"><h3>Loop Handle Paper Bag</h3><p class="product-price">$4.99</p><button class="view-details-btn">View Details</button></div>
+                    </div>
+                    <div class="product-card" data-product="29" data-section="retail" data-category="paper-bags" data-search="retail kraft paper bags">
+                        <div class="product-image"><img src="https://images.unsplash.com/photo-1654160225308-9ccb4d1b38e3?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85&w=400" alt="Kraft Paper Bag"></div>
+                        <div class="product-info"><h3>Kraft Paper Bag</h3><p class="product-price">$3.49</p><button class="view-details-btn">View Details</button></div>
+                    </div>
+                    <div class="product-card" data-product="30" data-section="retail" data-category="paper-bags" data-search="retail printed paper bags">
+                        <div class="product-image"><img src="https://images.unsplash.com/photo-1616205255812-c07c8102cc02?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85&w=400" alt="Printed Paper Bag"></div>
+                        <div class="product-info"><h3>Printed Paper Bag</h3><p class="product-price">$5.49</p><button class="view-details-btn">View Details</button></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Jute Bags -->
+            <h3 id="retail-jute-bags" class="products-subsection-title" data-testid="jute-bags-title">Jute Bags</h3>
+            <section class="products-section" data-section="retail" data-category="jute-bags">
+                <div class="products-container">
+                    <div class="product-card" data-product="41" data-section="retail" data-category="jute-bags" data-search="retail d-cut jute bags">
+                        <div class="product-image"><img src="https://images.unsplash.com/photo-1758708536099-9f46dc81fffc?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85&w=400" alt="D-cut Jute Bag"></div>
+                        <div class="product-info"><h3>D-cut Jute Bag</h3><p class="product-price">$6.49</p><button class="view-details-btn">View Details</button></div>
+                    </div>
+                    <div class="product-card" data-product="42" data-section="retail" data-category="jute-bags" data-search="retail box jute bags">
+                        <div class="product-image"><img src="https://images.unsplash.com/photo-1763634708808-c56bf88021fd?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85&w=400" alt="Canvas Tote Bag"></div>
+                        <div class="product-info"><h3>Canvas Tote Bag</h3><p class="product-price">$7.49</p><button class="view-details-btn">View Details</button></div>
+                    </div>
+                    <div class="product-card" data-product="43" data-section="retail" data-category="jute-bags" data-search="retail loop handle jute bags">
+                        <div class="product-image"><img src="https://images.unsplash.com/photo-1752051665228-28ade71b97b5?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85&w=400" alt="Loop Handle Jute Bag"></div>
+                        <div class="product-info"><h3>Loop Handle Jute Bag</h3><p class="product-price">$7.99</p><button class="view-details-btn">View Details</button></div>
+                    </div>
+                    <div class="product-card" data-product="44" data-section="retail" data-category="jute-bags" data-search="retail eco jute bags">
+                        <div class="product-image"><img src="https://images.unsplash.com/photo-1760565030346-4b947220fe3a?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85&w=400" alt="Eco Jute Bag"></div>
+                        <div class="product-info"><h3>Eco Jute Bag</h3><p class="product-price">$5.99</p><button class="view-details-btn">View Details</button></div>
+                    </div>
+                    <div class="product-card" data-product="45" data-section="retail" data-category="jute-bags" data-search="retail printed jute bags">
+                        <div class="product-image"><img src="https://images.pexels.com/photos/5926245/pexels-photo-5926245.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Printed Jute Bag"></div>
+                        <div class="product-info"><h3>Printed Jute Bag</h3><p class="product-price">$8.49</p><button class="view-details-btn">View Details</button></div>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <!-- Product Details Modal -->
+        <div class="product-details-modal" id="productModal" data-testid="product-modal">
+            <div class="modal-content">
+                <button class="close-btn" aria-label="Close modal" data-testid="modal-close">&times;</button>
+                <div class="product-details-container">
+                    <div class="product-images-section">
+                        <div class="main-image">
+                            <img id="mainProductImage" src="" alt="Product Image">
+                        </div>
+                        <div class="thumbnail-images">
+                            <img class="thumbnail active" src="" alt="Thumbnail 1">
+                            <img class="thumbnail" src="" alt="Thumbnail 2">
+                            <img class="thumbnail" src="" alt="Thumbnail 3">
+                            <img class="thumbnail" src="" alt="Thumbnail 4">
+                        </div>
+                    </div>
+                    <div class="product-details-section">
+                        <h2 id="productTitle"></h2>
+                        <p class="product-price-large" id="productPrice"></p>
+                        <div class="product-description">
+                            <h3>Description</h3>
+                            <p id="productDescription"></p>
+                        </div>
+                        <div class="product-specs">
+                            <h3>Specifications</h3>
+                            <ul id="productSpecs"></ul>
+                        </div>
+                        <div class="product-features">
+                            <h3>Key Features</h3>
+                            <ul id="productFeatures"></ul>
+                        </div>
+                        <div class="product-actions">
+                            <button class="add-to-cart-btn" data-testid="whatsapp-btn"><i class="fab fa-whatsapp"></i> WhatsApp</button>
+                            <button class="buy-now-btn" data-testid="instagram-btn"><i class="fab fa-instagram"></i> Instagram</button>
+                        </div>
+                        <div class="owner-remove-action" id="owner-remove-from-listing-wrap" aria-hidden="true">
+                            <button type="button" class="owner-remove-from-listing-btn" id="owner-remove-from-listing">Remove from listing</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Owner login modal -->
+        <div class="owner-modal" id="owner-login-modal" aria-hidden="true" data-testid="owner-login-modal">
+            <div class="owner-modal-content">
+                <button type="button" class="owner-modal-close" id="owner-login-close" aria-label="Close">&times;</button>
+                <h3>Owner Login</h3>
+                <p class="owner-modal-hint">Enter password to add or manage products.</p>
+                <input type="password" id="owner-password" class="owner-input" placeholder="Password" autocomplete="current-password">
+                <button type="button" class="owner-btn primary" id="owner-login-submit">Login</button>
+                <p class="owner-error" id="owner-login-error"></p>
+            </div>
+        </div>
+
+        <!-- Add product modal -->
+        <div class="owner-modal" id="owner-add-product-modal" aria-hidden="true" data-testid="owner-add-product-modal">
+            <div class="owner-modal-content owner-form-content">
+                <button type="button" class="owner-modal-close" id="owner-add-product-close" aria-label="Close">&times;</button>
+                <h3>Add New Product</h3>
+                <form id="owner-add-product-form" class="owner-form">
+                    <label for="add-product-title">Product name</label>
+                    <input type="text" id="add-product-title" class="owner-input" required placeholder="e.g. D-cut Bag">
+                    <label for="add-product-price">Price / description</label>
+                    <input type="text" id="add-product-price" class="owner-input" required placeholder="e.g. $4.49 or printed-bags">
+                    <label for="add-product-description">Description</label>
+                    <textarea id="add-product-description" class="owner-input owner-textarea" rows="3" placeholder="Short product description..."></textarea>
+                    <label for="add-product-image">Main image URL</label>
+                    <input type="url" id="add-product-image" class="owner-input" placeholder="https://... or img/bag1.jpeg">
+                    <label for="add-product-extra-images">Extra image URLs (optional)</label>
+                    <textarea id="add-product-extra-images" class="owner-input owner-textarea" rows="2" placeholder="img/bag2.jpeg, img/bag3.jpeg"></textarea>
+                    <label for="add-product-section">Section</label>
+                    <select id="add-product-section" class="owner-input">
+                        <option value="wholesale">Wholesale</option>
+                        <option value="retail">Retail</option>
+                    </select>
+                    <label for="add-product-category" id="add-product-category-label">Retail category</label>
+                    <select id="add-product-category" class="owner-input">
+                        <option value="pp-bags">PP Bags</option>
+                        <option value="paper-bags">Paper Bags</option>
+                        <option value="nonwoven-bags">Non Woven Bags</option>
+                        <option value="jute-bags">Jute Bags</option>
+                    </select>
+                    <label for="add-product-search">Search keywords</label>
+                    <input type="text" id="add-product-search" class="owner-input" placeholder="e.g. retail d-cut pp bags">
+                    <div class="owner-form-actions">
+                        <button type="submit" class="owner-btn primary">Add Product</button>
+                        <button type="button" class="owner-btn secondary" id="owner-logout-btn">Logout</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Owner FAB -->
+        <button type="button" class="owner-fab" id="owner-fab" aria-label="Add product" title="Add product" aria-hidden="true" data-testid="owner-fab">
+            <i class="fas fa-plus"></i>
+        </button>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" data-testid="footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <div class="footer-brand">
+                    <img src="https://customer-assets.emergentagent.com/job_bag-shop-redesign/artifacts/8osdwagg_hemraj.jpeg" alt="Hemraj" class="footer-logo">
+                    <h4>The Hemraj Enterprises</h4>
+                </div>
+                <p class="footer-desc">Premium eco-friendly bags for retail, wholesale, and custom branding needs.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="about us.html">About Us</a></li>
+                    <li><a href="#">Our Services</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Shipping</a></li>
+                    <li><a href="#">Returns</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 The Hemraj Enterprises. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

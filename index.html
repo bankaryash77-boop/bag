@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Hemraj Enterprises - Premium Bags</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- Sticky Header -->
+    <header class="header" data-testid="main-header">
+        <div class="header-container">
+            <a href="index.html" class="logo" data-testid="logo-link">
+                <img src="https://customer-assets.emergentagent.com/job_bag-shop-redesign/artifacts/8osdwagg_hemraj.jpeg" alt="The Hemraj Enterprises" class="logo-img">
+                <span class="logo-text">Hemraj</span>
+            </a>
+            
+            <nav class="nav-desktop" data-testid="desktop-nav">
+                <a href="index.html" class="nav-link active" data-testid="nav-home">Home</a>
+                <a href="products.html" class="nav-link" data-testid="nav-products">Products</a>
+                <a href="about us.html" class="nav-link" data-testid="nav-about">About</a>
+                <a href="contact.html" class="nav-link" data-testid="nav-contact">Contact</a>
+            </nav>
+
+            <button class="menu-toggle" type="button" aria-label="Open menu" aria-controls="mobileDrawer" aria-expanded="false" data-testid="menu-toggle">
+                <span class="menu-icon" aria-hidden="true"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Drawer -->
+    <div class="drawer-overlay" data-drawer-close></div>
+    <aside class="mobile-drawer" id="mobileDrawer" aria-hidden="true" data-testid="mobile-drawer">
+        <div class="drawer-header">
+            <span class="drawer-title">Menu</span>
+            <button class="drawer-close" type="button" aria-label="Close menu" data-drawer-close data-testid="drawer-close">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <nav class="drawer-nav">
+            <a href="index.html" class="active" data-drawer-link data-testid="drawer-home">Home</a>
+            <a href="products.html" data-drawer-link data-testid="drawer-products">Products</a>
+            <a href="about us.html" data-drawer-link data-testid="drawer-about">About</a>
+            <a href="contact.html" data-drawer-link data-testid="drawer-contact">Contact</a>
+        </nav>
+    </aside>
+
+    <!-- Hero Carousel -->
+    <section class="carousel" data-testid="hero-carousel">
+        <div class="list">
+            <!-- Slide 1 -->
+            <div class="item" style="background-image: url('https://images.unsplash.com/photo-1644015040594-8924d3ecc0dd?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85&w=1920');">
+                <div class="content">
+                    <div class="title">Eco-Friendly</div>
+                    <div class="name">Paper Bags</div>
+                    <div class="des">Premium quality paper bags for retail, events, and brand promotion. Sustainable packaging solutions for your business.</div>
+                    <div class="btn">
+                        <a href="products.html" class="btn-primary" data-testid="slide1-shop-btn">Shop Now</a>
+                        <a href="contact.html" class="btn-secondary" data-testid="slide1-contact-btn">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="item" style="background-image: url('https://images.pexels.com/photos/4068320/pexels-photo-4068320.jpeg?auto=compress&cs=tinysrgb&w=1920');">
+                <div class="content">
+                    <div class="title">Reusable</div>
+                    <div class="name">Tote Bags</div>
+                    <div class="des">Durable non-woven and fabric bags perfect for shopping, gifting, and everyday use. Built to last.</div>
+                    <div class="btn">
+                        <a href="products.html" class="btn-primary" data-testid="slide2-shop-btn">Shop Now</a>
+                        <a href="contact.html" class="btn-secondary" data-testid="slide2-contact-btn">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="item" style="background-image: url('https://images.unsplash.com/photo-1603977864646-61e41115a85e?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85&w=1920');">
+                <div class="content">
+                    <div class="title">Sustainable</div>
+                    <div class="name">Non-Woven</div>
+                    <div class="des">Eco-conscious packaging that makes a difference. Custom printing available for your brand.</div>
+                    <div class="btn">
+                        <a href="products.html" class="btn-primary" data-testid="slide3-shop-btn">Shop Now</a>
+                        <a href="contact.html" class="btn-secondary" data-testid="slide3-contact-btn">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 4 -->
+            <div class="item" style="background-image: url('https://images.pexels.com/photos/28575487/pexels-photo-28575487.jpeg?auto=compress&cs=tinysrgb&w=1920');">
+                <div class="content">
+                    <div class="title">Premium</div>
+                    <div class="name">Jute Bags</div>
+                    <div class="des">Natural jute bags combining style and sustainability. Perfect for eco-conscious businesses.</div>
+                    <div class="btn">
+                        <a href="products.html" class="btn-primary" data-testid="slide4-shop-btn">Shop Now</a>
+                        <a href="contact.html" class="btn-secondary" data-testid="slide4-contact-btn">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 5 -->
+            <div class="item" style="background-image: url('https://images.unsplash.com/photo-1603977865139-05ba89d5eefe?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85&w=1920');">
+                <div class="content">
+                    <div class="title">Custom</div>
+                    <div class="name">PP Bags</div>
+                    <div class="des">Polypropylene bags with custom printing. Ideal for wholesale orders and bulk packaging needs.</div>
+                    <div class="btn">
+                        <a href="products.html" class="btn-primary" data-testid="slide5-shop-btn">Shop Now</a>
+                        <a href="contact.html" class="btn-secondary" data-testid="slide5-contact-btn">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Arrows -->
+        <div class="arrows">
+            <button class="prev" aria-label="Previous slide" data-testid="carousel-prev">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="next" aria-label="Next slide" data-testid="carousel-next">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="timeRunning"></div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section" data-testid="features-section">
+        <div class="features-container">
+            <div class="feature-card" data-testid="feature-eco">
+                <div class="feature-icon">
+                    <i class="fas fa-leaf"></i>
+                </div>
+                <h3>100% Eco-Friendly</h3>
+                <p>Sustainable materials that protect our planet</p>
+            </div>
+            <div class="feature-card" data-testid="feature-durable">
+                <div class="feature-icon">
+                    <i class="fas fa-sync-alt"></i>
+                </div>
+                <h3>Durable & Reusable</h3>
+                <p>Built to last for multiple uses</p>
+            </div>
+            <div class="feature-card" data-testid="feature-custom">
+                <div class="feature-icon">
+                    <i class="fas fa-palette"></i>
+                </div>
+                <h3>Custom Designs</h3>
+                <p>Personalized printing for your brand</p>
+            </div>
+            <div class="feature-card" data-testid="feature-delivery">
+                <div class="feature-icon">
+                    <i class="fas fa-shipping-fast"></i>
+                </div>
+                <h3>Fast Delivery</h3>
+                <p>Quick turnaround on all orders</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories-section" data-testid="categories-section">
+        <div class="section-header">
+            <h2>Shop by Category</h2>
+            <p>Find the perfect bag for your needs</p>
+        </div>
+        <div class="categories-grid">
+            <a href="products.html#retail-nonwoven-bags" class="category-card" data-testid="cat-nonwoven">
+                <div class="category-image">
+                    <img src="https://images.unsplash.com/photo-1603977864646-61e41115a85e?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85&w=400" alt="Non-Woven Bags">
+                </div>
+                <div class="category-info">
+                    <h3>Non-Woven Bags</h3>
+                    <span class="category-link">Shop Now <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </a>
+            <a href="products.html#retail-pp-bags" class="category-card" data-testid="cat-pp">
+                <div class="category-image">
+                    <img src="https://images.pexels.com/photos/4068320/pexels-photo-4068320.jpeg?auto=compress&cs=tinysrgb&w=400" alt="PP Bags">
+                </div>
+                <div class="category-info">
+                    <h3>PP Bags</h3>
+                    <span class="category-link">Shop Now <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </a>
+            <a href="products.html#retail-paper-bags" class="category-card" data-testid="cat-paper">
+                <div class="category-image">
+                    <img src="https://images.unsplash.com/photo-1644015040594-8924d3ecc0dd?crop=entropy&cs=srgb&fm=jpg&ixlib=rb-4.1.0&q=85&w=400" alt="Paper Bags">
+                </div>
+                <div class="category-info">
+                    <h3>Paper Bags</h3>
+                    <span class="category-link">Shop Now <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </a>
+            <a href="products.html#retail-jute-bags" class="category-card" data-testid="cat-jute">
+                <div class="category-image">
+                    <img src="https://images.pexels.com/photos/28575487/pexels-photo-28575487.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Jute Bags">
+                </div>
+                <div class="category-info">
+                    <h3>Jute Bags</h3>
+                    <span class="category-link">Shop Now <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" data-testid="cta-section">
+        <div class="cta-content">
+            <h2>Need Bulk Orders?</h2>
+            <p>Get wholesale pricing for large quantities. Custom printing and branding available.</p>
+            <a href="products.html#wholesale-products" class="btn-cta" data-testid="cta-wholesale-btn">View Wholesale Products</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" data-testid="footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <div class="footer-brand">
+                    <img src="https://customer-assets.emergentagent.com/job_bag-shop-redesign/artifacts/8osdwagg_hemraj.jpeg" alt="Hemraj" class="footer-logo">
+                    <h4>The Hemraj Enterprises</h4>
+                </div>
+                <p class="footer-desc">Premium eco-friendly bags for retail, wholesale, and custom branding needs.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="about us.html">About Us</a></li>
+                    <li><a href="#">Our Services</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Shipping</a></li>
+                    <li><a href="#">Returns</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook" data-testid="social-facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter" data-testid="social-twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram" data-testid="social-instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn" data-testid="social-linkedin"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 The Hemraj Enterprises. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
